@@ -7,7 +7,7 @@ const Nav = () => {
       <div className="top-bar-left">
         <ul className="menu">
           <li>
-            <Link to="/">New Data</Link>
+            <Link to="/">New Entry</Link>
           </li>
           <li>
             <Link to="/report">Report</Link>

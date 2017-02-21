@@ -8304,6 +8304,18 @@ Object.keys(_Entry).forEach(function (key) {
   });
 });
 
+var _EntryForm = __webpack_require__(251);
+
+Object.keys(_EntryForm).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _EntryForm[key];
+    }
+  });
+});
+
 var _Report = __webpack_require__(120);
 
 Object.keys(_Report).forEach(function (key) {
@@ -12469,6 +12481,8 @@ var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _Components = __webpack_require__(71);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -12480,19 +12494,32 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var Entry = function (_Component) {
   _inherits(Entry, _Component);
 
-  function Entry() {
+  function Entry(props) {
     _classCallCheck(this, Entry);
 
-    return _possibleConstructorReturn(this, (Entry.__proto__ || Object.getPrototypeOf(Entry)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (Entry.__proto__ || Object.getPrototypeOf(Entry)).call(this, props));
+
+    _this.saveEntry = _this.saveEntry.bind(_this);
+    return _this;
   }
 
   _createClass(Entry, [{
-    key: "render",
+    key: 'saveEntry',
+    value: function saveEntry(data) {
+      alert('form submited');
+    }
+  }, {
+    key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        "div",
-        { className: "page-container" },
-        "Entry Component"
+        'div',
+        { className: 'page-container' },
+        _react2.default.createElement(
+          'div',
+          { className: 'title' },
+          'Add new entry'
+        ),
+        _react2.default.createElement(_Components.EntryForm, { onNewEntry: this.saveEntry })
       );
     }
   }]);
@@ -12532,7 +12559,7 @@ var Main = function Main(props) {
       { className: 'row' },
       _react2.default.createElement(
         'div',
-        { className: 'columns large-8 medium-8 small-centered' },
+        { className: 'columns large-6 medium-8 small-centered' },
         props.children
       )
     )
@@ -12577,7 +12604,7 @@ var Nav = function Nav() {
           _react2.default.createElement(
             _reactRouter.Link,
             { to: '/' },
-            'New Data'
+            'New Entry'
           )
         ),
         _react2.default.createElement(
@@ -12636,7 +12663,7 @@ var Report = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         "div",
-        { className: "page-container" },
+        { className: "page-container text-center" },
         "Report Component"
       );
     }
@@ -12670,7 +12697,7 @@ exports = module.exports = __webpack_require__(72)();
 
 
 // module
-exports.push([module.i, ".page-container {\n  margin-top: 2.5rem;\n  margin-bottom: 2.5rem;\n  text-align: center; }\n\n.top-bar, .top-bar .menu {\n  background-color: white; }\n", ""]);
+exports.push([module.i, ".page-container {\n  margin-top: 2.5rem;\n  margin-bottom: 2.5rem; }\n\n.top-bar, .top-bar .menu {\n  background-color: white; }\n", ""]);
 
 // exports
 
@@ -27230,6 +27257,76 @@ __webpack_require__(116);
 __webpack_require__(115);
 module.exports = __webpack_require__(114);
 
+
+/***/ }),
+/* 251 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.EntryForm = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(6);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var EntryForm = function (_Component) {
+  _inherits(EntryForm, _Component);
+
+  function EntryForm(props) {
+    _classCallCheck(this, EntryForm);
+
+    var _this = _possibleConstructorReturn(this, (EntryForm.__proto__ || Object.getPrototypeOf(EntryForm)).call(this, props));
+
+    _this.onFormSubmit = _this.onFormSubmit.bind(_this);
+    return _this;
+  }
+
+  _createClass(EntryForm, [{
+    key: "onFormSubmit",
+    value: function onFormSubmit(e) {
+      e.preventDefault();
+      var data = {};
+
+      this.props.onNewEntry(data);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        null,
+        _react2.default.createElement(
+          "form",
+          { onSubmit: this.onFormSubmit },
+          _react2.default.createElement("input", { type: "text", ref: "name", placeholder: "Enter name" }),
+          _react2.default.createElement("input", { type: "number", ref: "value", placeholder: "Value for the identity" }),
+          _react2.default.createElement("input", { type: "date", ref: "startDate", placeholder: "" }),
+          _react2.default.createElement("input", { type: "date", ref: "endDate", placeholder: "" }),
+          _react2.default.createElement("input", { type: "submit", value: "save", className: "hollow button expanded" })
+        )
+      );
+    }
+  }]);
+
+  return EntryForm;
+}(_react.Component);
+
+exports.EntryForm = EntryForm;
 
 /***/ })
 /******/ ]);
