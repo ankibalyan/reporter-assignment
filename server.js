@@ -2,14 +2,7 @@ const express = require('express');
 
 const app = express();
 
-const PORT = process.env.PORT || 5100;
-
-app.use(function (req, res, next) {
-  if (req.headers['x-forwarded-proto'] === 'https') {
-    res.redirect(`http://${req.hostname}${req.url}`);
-  }
-  next();
-})
+const PORT = 5100;
 
 app.use(express.static('public'));
 
