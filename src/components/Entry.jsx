@@ -3,7 +3,9 @@ import React, {Component} from 'react';
 class Entry extends Component {
   render() {
     return (
-      <div>Entry Component</div>
+      <div className="page-container">
+        Entry Component
+      </div>
     );
   }
 }

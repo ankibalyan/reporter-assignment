@@ -7,6 +7,8 @@ import { Main, Entry, Report } from 'Components';
 require('style-loader!css-loader!foundation-sites/dist/css/foundation.min.css');
 $(document).foundation();
 
+require('style-loader!css-loader!sass-loader!AppStyles');
+
 ReactDOM.render(
   <Router history={hashHistory}>
     <Route path="/" component={Main}>
