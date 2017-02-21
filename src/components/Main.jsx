@@ -1,9 +1,15 @@
 import React, {Component} from 'react';
+import {Nav} from 'Components';
 
 const Main = props => {
     return (
       <div>
-        {props.children}
+        <Nav />
+        <div className="row">
+          <div className="columns large-8 medium-8 small-centered">
+            {props.children}
+          </div>
+        </div>
       </div>
     );
 };

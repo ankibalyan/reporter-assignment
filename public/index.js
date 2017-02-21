@@ -12060,13 +12060,24 @@ var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _Components = __webpack_require__(116);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Main = function Main(props) {
   return _react2.default.createElement(
     'div',
     null,
-    props.children
+    _react2.default.createElement(_Components.Nav, null),
+    _react2.default.createElement(
+      'div',
+      { className: 'row' },
+      _react2.default.createElement(
+        'div',
+        { className: 'columns large-8 medium-8 small-centered' },
+        props.children
+      )
+    )
   );
 };
 
@@ -12142,6 +12153,18 @@ Object.keys(_Main).forEach(function (key) {
     enumerable: true,
     get: function get() {
       return _Main[key];
+    }
+  });
+});
+
+var _Nav = __webpack_require__(248);
+
+Object.keys(_Nav).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _Nav[key];
     }
   });
 });
@@ -27110,6 +27133,61 @@ __webpack_require__(112);
 __webpack_require__(111);
 module.exports = __webpack_require__(110);
 
+
+/***/ }),
+/* 248 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Nav = undefined;
+
+var _react = __webpack_require__(6);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouter = __webpack_require__(227);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Nav = function Nav() {
+  return _react2.default.createElement(
+    'nav',
+    { className: 'top-bar' },
+    _react2.default.createElement(
+      'div',
+      { className: 'top-bar-left' },
+      _react2.default.createElement(
+        'ul',
+        { className: 'menu' },
+        _react2.default.createElement(
+          'li',
+          null,
+          _react2.default.createElement(
+            _reactRouter.Link,
+            { to: '/' },
+            'New Data'
+          )
+        ),
+        _react2.default.createElement(
+          'li',
+          null,
+          _react2.default.createElement(
+            _reactRouter.Link,
+            { to: '/report' },
+            'Report'
+          )
+        )
+      )
+    )
+  );
+};
+
+exports.Nav = Nav;
 
 /***/ })
 /******/ ]);
