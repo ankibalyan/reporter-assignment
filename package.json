@@ -5,6 +5,10 @@
   "main": "index.js",
   "author": "Ankit Kumar <ankit.kr.balyan@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "node_modules/.bin/webpack -p",
+    "start": "node server.js"
+  },
   "devDependencies": {
     "babel-core": "^6.23.1",
     "babel-loader": "^6.3.2",
