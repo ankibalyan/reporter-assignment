@@ -1,0 +1,21 @@
+.circle-bg,
+.circle-fg {
+    fill: none;
+}
+
+.circle-bg {
+    stroke: $progress-bg-color;
+    transform: rotate(90);
+}
+
+.circle-fg {
+    stroke: $progress-fg-color;
+    transform-origin: 50% 50%;
+    transform: rotate(-90deg);
+}
+
+.graph-text {
+    font-family: sans-serif;
+    font-size: 3rem;
+    fill: $progress-text-color;
+}
