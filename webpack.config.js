@@ -9,7 +9,10 @@ module.exports = {
     path: path.resolve(__dirname, 'public')
   },
   resolve: {
-    extensions: ['.js', 'jsx']
+    extensions: ['.js', '.jsx'],
+    alias: {
+      Components: path.resolve(__dirname, 'src/components')
+    }
   },
   module: {
     loaders: [
