@@ -5,7 +5,6 @@ import { EntryForm } from 'Components';
 class Entry extends Component {
   constructor(props) {
     super(props);
-
     this.saveEntry = this.saveEntry.bind(this);
   }
 
