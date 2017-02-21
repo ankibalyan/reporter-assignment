@@ -4,5 +4,8 @@
   "description": "Reporer - A sample Assignment given by liftOff softwares",
   "main": "index.js",
   "author": "Ankit Kumar <ankit.kr.balyan@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "express": "^4.14.1"
+  }
 }
